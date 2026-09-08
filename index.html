@@ -7,106 +7,375 @@
   <title>Mariage de Fred & Catherine</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: Georgia, serif;
-      background-color: #faf7f2;
-      color: #3d3d3d;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #faf7f1;
+      color: #3f493f;
       text-align: center;
     }
 
-    header {
-      padding: 80px 20px;
-      background-color: #eee5da;
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      background:
+        radial-gradient(circle at top, #ffffff 0%, #f5f0e7 65%, #e9e2d5 100%);
+    }
+
+    .monogramme {
+      font-size: 72px;
+      color: #71806c;
+      margin-bottom: 15px;
+      letter-spacing: 4px;
     }
 
     h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
+      font-size: 38px;
+      font-weight: normal;
+      margin: 5px 0;
+    }
+
+    .invitation {
+      font-style: italic;
+      font-size: 19px;
+      margin: 20px auto;
+      max-width: 500px;
+      line-height: 1.6;
     }
 
     .date {
-      font-size: 22px;
+      font-size: 25px;
+      margin-top: 20px;
+      color: #71806c;
+    }
+
+    .trait {
+      width: 80px;
+      height: 1px;
+      background: #9aa895;
+      margin: 30px auto;
     }
 
     section {
-      max-width: 700px;
+      padding: 60px 20px;
+      max-width: 800px;
       margin: auto;
-      padding: 45px 20px;
     }
 
     h2 {
-      font-size: 28px;
+      font-size: 30px;
+      font-weight: normal;
+      color: #71806c;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .temps {
+      background: white;
+      min-width: 80px;
+      padding: 18px 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    }
+
+    .nombre {
+      display: block;
+      font-size: 30px;
+      color: #71806c;
+    }
+
+    .label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .lieu {
+      background: white;
+      margin: 25px auto;
+      padding: 30px 20px;
+      border-radius: 15px;
+      max-width: 600px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    }
+
+    .heure {
+      font-size: 24px;
+      color: #71806c;
+      font-weight: bold;
     }
 
     .bouton {
       display: inline-block;
       margin-top: 15px;
-      padding: 15px 25px;
-      background-color: #9b7957;
+      padding: 14px 25px;
+      background: #71806c;
       color: white;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 30px;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      transition: 0.2s;
+    }
+
+    .bouton:hover {
+      transform: scale(1.04);
+      background: #596653;
+    }
+
+    .programme {
+      background: #eee9df;
+      max-width: none;
+    }
+
+    .infos {
+      max-width: 600px;
+      margin: auto;
     }
 
     footer {
-      padding: 30px;
-      background-color: #eee5da;
+      background: #71806c;
+      color: white;
+      padding: 45px 20px;
+    }
+
+    footer .fc {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .monogramme {
+        font-size: 55px;
+      }
+
+      h1 {
+        font-size: 31px;
+      }
+
+      .temps {
+        min-width: 70px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <header>
+  <div class="hero">
+
+    <div class="monogramme">F & C</div>
+
     <h1>Fred & Catherine</h1>
-    <div class="date">17 juillet 2027</div>
-  </header>
+
+    <div class="trait"></div>
+
+    <p class="invitation">
+      Nous avons le plaisir de vous inviter<br>
+      à célébrer notre mariage.
+    </p>
+
+    <div class="date">
+      Samedi 17 juillet 2027
+    </div>
+
+  </div>
+
 
   <section>
-    <h2>Nous nous marions ! ❤️</h2>
+
+    <h2>Le grand jour approche…</h2>
 
     <p>
-      Nous sommes très heureux de vous inviter à partager
-      cette journée avec nous.
+      Nous avons hâte de partager cette journée
+      si particulière avec vous.
     </p>
+
+    <div class="countdown">
+
+      <div class="temps">
+        <span class="nombre" id="jours">0</span>
+        <span class="label">Jours</span>
+      </div>
+
+      <div class="temps">
+        <span class="nombre" id="heures">0</span>
+        <span class="label">Heures</span>
+      </div>
+
+      <div class="temps">
+        <span class="nombre" id="minutes">0</span>
+        <span class="label">Minutes</span>
+      </div>
+
+      <div class="temps">
+        <span class="nombre" id="secondes">0</span>
+        <span class="label">Secondes</span>
+      </div>
+
+    </div>
+
   </section>
 
-  <section>
-    <h2>📍 Le lieu</h2>
 
-    <p>
-      Les informations concernant le lieu de la cérémonie
-      seront indiquées ici.
-    </p>
+  <section class="programme">
+
+    <h2>Le programme</h2>
+
+    <div class="lieu">
+
+      <div class="heure">16h00</div>
+
+      <h3>Cérémonie civile</h3>
+
+      <p>
+        Mairie de Dol-de-Bretagne<br>
+        35120 Dol-de-Bretagne
+      </p>
+
+      <a
+        class="bouton"
+        href="https://www.google.com/maps/search/?api=1&query=Mairie+de+Dol-de-Bretagne+35120"
+        target="_blank">
+        📍 Ouvrir dans Google Maps
+      </a>
+
+    </div>
+
+
+    <div class="lieu">
+
+      <h3>🥂 La réception</h3>
+
+      <p>
+        Après la cérémonie,<br>
+        retrouvons-nous pour poursuivre les festivités.
+      </p>
+
+      <p>
+        <strong>Salle des fêtes de Hirel</strong><br>
+        35120 Hirel
+      </p>
+
+      <a
+        class="bouton"
+        href="https://www.google.com/maps/search/?api=1&query=Salle+des+fetes+Hirel+35120"
+        target="_blank">
+        📍 Ouvrir dans Google Maps
+      </a>
+
+    </div>
+
   </section>
 
-  <section>
-    <h2>🕒 Programme</h2>
 
-    <p>
-      Cérémonie<br>
-      Vin d'honneur<br>
-      Repas et soirée
-    </p>
+  <section>
+
+    <h2>Informations pratiques</h2>
+
+    <div class="infos">
+
+      <p>
+        Toutes les informations utiles concernant
+        le déroulement de la journée seront disponibles ici.
+      </p>
+
+      <p>
+        Pensez à revenir consulter cette page avant le mariage :
+        nous pourrons la mettre à jour au fur et à mesure.
+      </p>
+
+    </div>
+
   </section>
 
+
   <section>
-    <h2>💌 Confirmer votre présence</h2>
+
+    <h2>Votre présence ❤️</h2>
 
     <p>
-      Merci de nous confirmer votre présence.
+      Votre présence à nos côtés rendra cette journée
+      encore plus belle.
     </p>
 
     <a class="bouton" href="#">
-      Je confirme ma présence
+      💌 Confirmer ma présence
     </a>
+
   </section>
 
+
   <footer>
-    Fred & Catherine ❤️<br>
-    17 juillet 2027
+
+    <div class="fc">F & C</div>
+
+    Fred & Catherine<br><br>
+
+    17 • 07 • 2027
+
   </footer>
+
+
+  <script>
+
+    const dateMariage = new Date("2027-07-17T16:00:00");
+
+    function compteur() {
+
+      const maintenant = new Date();
+      const difference = dateMariage - maintenant;
+
+      if (difference <= 0) {
+        document.getElementById("jours").innerText = "0";
+        document.getElementById("heures").innerText = "0";
+        document.getElementById("minutes").innerText = "0";
+        document.getElementById("secondes").innerText = "0";
+        return;
+      }
+
+      const jours =
+        Math.floor(difference / (1000 * 60 * 60 * 24));
+
+      const heures =
+        Math.floor((difference / (1000 * 60 * 60)) % 24);
+
+      const minutes =
+        Math.floor((difference / (1000 * 60)) % 60);
+
+      const secondes =
+        Math.floor((difference / 1000) % 60);
+
+      document.getElementById("jours").innerText = jours;
+      document.getElementById("heures").innerText = heures;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("secondes").innerText = secondes;
+    }
+
+    compteur();
+
+    setInterval(compteur, 1000);
+
+  </script>
 
 </body>
 </html>
