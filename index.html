@@ -33,7 +33,7 @@
       justify-content: center;
       align-items: center;
 
-      padding: 60px 320px;
+      padding: 60px 360px;
 
       background:
         radial-gradient(
@@ -50,33 +50,40 @@
       max-width: 650px;
     }
 
-    /* Monogrammes décoratifs */
+    /* =========================
+       MONOGRAMMES
+       ========================= */
 
-.deco {
-  position: absolute;
-  z-index: 1;
+    .deco {
+      position: absolute;
+      z-index: 1;
 
-  /* Plus grands */
-  width: 430px;
-  max-width: 30vw;
-  height: auto;
+      width: 430px;
+      max-width: 30vw;
+      height: auto;
 
-  top: 50%;
-  transform: translateY(-50%);
+      top: 50%;
+      transform: translateY(-50%);
 
-  filter: drop-shadow(0 8px 15px rgba(0,0,0,0.10));
-}
+      filter: drop-shadow(0 8px 15px rgba(0,0,0,0.10));
+    }
 
-/* Monogramme gauche */
-.deco-gauche {
-  left: 7%;
-}
+    .deco-gauche {
+      left: 7%;
+    }
 
-/* Monogramme droite */
-.deco-droite {
-  right: 7%;
-  transform: translateY(0%);
-}
+    .deco-droite {
+      right: 7%;
+      transform: translateY(-50%);
+    }
+
+    .monogramme {
+      font-size: 72px;
+      color: #71806c;
+      margin-bottom: 15px;
+      letter-spacing: 4px;
+    }
+
     h1 {
       font-size: 38px;
       font-weight: normal;
@@ -252,6 +259,14 @@
         width: 250px;
         max-width: 30vw;
       }
+
+      .deco-gauche {
+        left: 3%;
+      }
+
+      .deco-droite {
+        right: 3%;
+      }
     }
 
     /* =========================
@@ -262,47 +277,119 @@
 
       .hero {
         min-height: 100vh;
-        padding: 60px 20px;
+        min-height: 100svh;
+        padding: 150px 24px;
+        overflow: hidden;
       }
 
       .hero-contenu {
+        position: relative;
         z-index: 3;
+        width: 100%;
+        max-width: 360px;
+        margin: auto;
       }
+
+      /* Monogrammes sur téléphone */
 
       .deco {
-        width: 190px;
+        width: 175px;
         max-width: none;
-        opacity: 0.30;
+        height: auto;
+        opacity: 0.95;
+        filter: drop-shadow(0 5px 10px rgba(0,0,0,0.08));
       }
+
+      /* Monogramme en haut à gauche */
 
       .deco-gauche {
-        left: -75px;
-        top: 27%;
+        top: 20px;
+        left: -35px;
+        transform: none;
       }
 
+      /* Monogramme en bas à droite */
+
       .deco-droite {
-        right: -75px;
-        top: 73%;
+        top: auto;
+        bottom: 20px;
+        right: -35px;
+        transform: none;
       }
 
       .monogramme {
-        font-size: 55px;
+        font-size: 48px;
+        letter-spacing: 3px;
+        margin-bottom: 12px;
       }
 
       h1 {
-        font-size: 31px;
+        font-size: 30px;
+        line-height: 1.2;
+        margin: 8px 0;
+      }
+
+      .trait {
+        width: 65px;
+        margin: 22px auto;
       }
 
       .invitation {
-        font-size: 18px;
+        font-size: 17px;
+        line-height: 1.6;
+        margin: 18px auto;
       }
 
       .date {
-        font-size: 22px;
+        font-size: 21px;
+        line-height: 1.4;
+        margin-top: 18px;
+      }
+
+      section {
+        padding: 45px 18px;
+      }
+
+      h2 {
+        font-size: 27px;
+      }
+
+      p {
+        font-size: 17px;
+      }
+
+      /* Compte à rebours 2 x 2 */
+
+      .countdown {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 120px));
+        justify-content: center;
+        gap: 12px;
       }
 
       .temps {
-        min-width: 70px;
+        width: 100%;
+        min-width: 0;
+        padding: 16px 8px;
+      }
+
+      .nombre {
+        font-size: 28px;
+      }
+
+      .lieu {
+        padding: 25px 16px;
+        margin: 20px auto;
+      }
+
+      .dress-code {
+        padding: 20px 16px;
+      }
+
+      .bouton {
+        max-width: 100%;
+        padding: 13px 20px;
+        line-height: 1.4;
       }
     }
 
@@ -554,7 +641,7 @@
 
 
   <!-- =========================
-       CONFIRMATION
+       CONFIRMATION DE PRÉSENCE
        ========================= -->
 
   <section>
@@ -611,11 +698,8 @@
 
     function compteur() {
 
-      const maintenant =
-        new Date();
-
-      const difference =
-        dateMariage - maintenant;
+      const maintenant = new Date();
+      const difference = dateMariage - maintenant;
 
       if (difference <= 0) {
 
@@ -629,20 +713,17 @@
 
       const jours =
         Math.floor(
-          difference /
-          (1000 * 60 * 60 * 24)
+          difference / (1000 * 60 * 60 * 24)
         );
 
       const heures =
         Math.floor(
-          (difference /
-          (1000 * 60 * 60)) % 24
+          (difference / (1000 * 60 * 60)) % 24
         );
 
       const minutes =
         Math.floor(
-          (difference /
-          (1000 * 60)) % 60
+          (difference / (1000 * 60)) % 60
         );
 
       const secondes =
@@ -650,17 +731,10 @@
           (difference / 1000) % 60
         );
 
-      document.getElementById("jours").innerText =
-        jours;
-
-      document.getElementById("heures").innerText =
-        heures;
-
-      document.getElementById("minutes").innerText =
-        minutes;
-
-      document.getElementById("secondes").innerText =
-        secondes;
+      document.getElementById("jours").innerText = jours;
+      document.getElementById("heures").innerText = heures;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("secondes").innerText = secondes;
     }
 
     compteur();
