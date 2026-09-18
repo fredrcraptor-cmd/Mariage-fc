@@ -207,7 +207,7 @@
     }
 
     /* =========================
-       INFORMATIONS PRATIQUES
+       INFORMATIONS
        ========================= */
 
     .infos {
@@ -230,18 +230,48 @@
     }
 
     /* =========================
-       PIED DE PAGE
+       FOOTER
        ========================= */
 
     footer {
       background: #71806c;
       color: white;
-      padding: 45px 20px;
+      padding: 45px 20px 18px;
     }
 
     footer .fc {
       font-size: 38px;
       margin-bottom: 10px;
+    }
+
+    /* Petit bouton secret */
+
+    .secret-link {
+      margin-top: 30px;
+    }
+
+    .secret-link a {
+      display: inline-block;
+
+      color: rgba(255,255,255,0.42);
+      text-decoration: none;
+
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+
+      letter-spacing: 1px;
+
+      padding: 5px 10px;
+
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 15px;
+
+      transition: 0.3s;
+    }
+
+    .secret-link a:hover {
+      color: white;
+      border-color: rgba(255,255,255,0.7);
     }
 
     /* =========================
@@ -270,7 +300,7 @@
     }
 
     /* =========================
-       TÉLÉPHONE
+       MOBILE
        ========================= */
 
     @media (max-width: 700px) {
@@ -278,42 +308,48 @@
       .hero {
         min-height: 100vh;
         min-height: 100svh;
+
         padding: 150px 24px;
+
         overflow: hidden;
       }
 
       .hero-contenu {
         position: relative;
         z-index: 3;
+
         width: 100%;
         max-width: 360px;
+
         margin: auto;
       }
-
-      /* Monogrammes sur téléphone */
 
       .deco {
         width: 175px;
         max-width: none;
-        height: auto;
-        opacity: 0.95;
-        filter: drop-shadow(0 5px 10px rgba(0,0,0,0.08));
-      }
 
-      /* Monogramme en haut à gauche */
+        height: auto;
+
+        opacity: 0.95;
+
+        filter:
+          drop-shadow(
+            0 5px 10px rgba(0,0,0,0.08)
+          );
+      }
 
       .deco-gauche {
         top: 20px;
         left: -35px;
+
         transform: none;
       }
-
-      /* Monogramme en bas à droite */
 
       .deco-droite {
         top: auto;
         bottom: 20px;
         right: -35px;
+
         transform: none;
       }
 
@@ -358,18 +394,21 @@
         font-size: 17px;
       }
 
-      /* Compte à rebours 2 x 2 */
-
       .countdown {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 120px));
+
+        grid-template-columns:
+          repeat(2, minmax(0,120px));
+
         justify-content: center;
+
         gap: 12px;
       }
 
       .temps {
         width: 100%;
         min-width: 0;
+
         padding: 16px 8px;
       }
 
@@ -388,7 +427,9 @@
 
       .bouton {
         max-width: 100%;
+
         padding: 13px 20px;
+
         line-height: 1.4;
       }
     }
@@ -396,22 +437,21 @@
   </style>
 </head>
 
+
 <body>
 
   <!-- =========================
-       BANDEAU D'ACCUEIL
+       ACCUEIL
        ========================= -->
 
   <div class="hero">
 
-    <!-- Monogramme gauche -->
     <img
       src="monogramme.png"
       class="deco deco-gauche"
       alt=""
     >
 
-    <!-- Monogramme droite -->
     <img
       src="monogramme.png"
       class="deco deco-droite"
@@ -421,10 +461,12 @@
     <div class="hero-contenu">
 
       <div class="monogramme">
-       
+        C & F
       </div>
 
-      <h1>Catherine & Freddy</h1>
+      <h1>
+        Catherine & Freddy
+      </h1>
 
       <div class="trait"></div>
 
@@ -448,10 +490,13 @@
 
   <section>
 
-    <h2>Le grand jour approche…</h2>
+    <h2>
+      Le grand jour approche…
+    </h2>
 
     <p>
-      Nous avons hâte de partager cette journée si particulière avec vous.
+      Nous avons hâte de partager cette journée
+      si particulière avec vous.
     </p>
 
     <div class="countdown">
@@ -487,7 +532,9 @@
 
   <section class="programme">
 
-    <h2>Le programme</h2>
+    <h2>
+      Le programme
+    </h2>
 
     <div class="lieu">
 
@@ -495,7 +542,9 @@
         16h00
       </div>
 
-      <h3>Cérémonie civile</h3>
+      <h3>
+        Cérémonie civile
+      </h3>
 
       <p>
         Mairie de Dol-de-Bretagne<br>
@@ -516,15 +565,21 @@
 
     <div class="lieu">
 
-      <h3>🥂 La Réception</h3>
+      <h3>
+        🥂 La Réception
+      </h3>
 
       <p>
         Après la cérémonie,<br>
-        retrouvons-nous pour poursuivre les festivités.
+        retrouvons-nous pour poursuivre
+        les festivités.
       </p>
 
       <p>
-        <strong>Salle intergénérationelle de Hirel</strong><br>
+        <strong>
+          Salle intergénérationelle de Hirel
+        </strong>
+        <br>
         36 Rue des Alleux, 35120 Hirel
       </p>
 
@@ -543,19 +598,24 @@
 
 
   <!-- =========================
-       INFORMATIONS PRATIQUES
+       INFORMATIONS
        ========================= -->
 
   <section>
 
-    <h2>Informations pratiques</h2>
+    <h2>
+      Informations pratiques
+    </h2>
 
     <div class="infos">
 
       <div class="dress-code">
 
         <p>
-          <strong>🌿 Thème</strong><br>
+          <strong>
+            🌿 Thème
+          </strong>
+          <br>
           Champêtre
         </p>
 
@@ -565,11 +625,18 @@
       <div class="dress-code">
 
         <p>
-          <strong>⚠️ Important – Hébergement</strong><br>
+          <strong>
+            ⚠️ Important – Hébergement
+          </strong>
+          <br>
 
-          Si vous venez de loin et souhaitez dormir sur place ou aux alentours,
-          pensez à réserver votre gîte ou votre hébergement suffisamment à l'avance.
-          Les hébergements peuvent vite être complets en période estivale.
+          Si vous venez de loin et souhaitez
+          dormir sur place ou aux alentours,
+          pensez à réserver votre gîte ou votre
+          hébergement suffisamment à l'avance.
+
+          Les hébergements peuvent vite être
+          complets en période estivale.
         </p>
 
       </div>
@@ -578,10 +645,15 @@
       <div class="dress-code">
 
         <p>
-          <strong>🛏️ Où dormir ?</strong><br>
+          <strong>
+            🛏️ Où dormir ?
+          </strong>
+          <br>
 
-          Retrouvez facilement les gîtes, chambres d'hôtes et autres hébergements
-          disponibles à Hirel et aux alentours.
+          Retrouvez facilement les gîtes,
+          chambres d'hôtes et autres
+          hébergements disponibles à Hirel
+          et aux alentours.
         </p>
 
         <a
@@ -599,12 +671,18 @@
       <div class="dress-code">
 
         <p>
-          <strong>📞 Une question ?</strong><br>
+          <strong>
+            📞 Une question ?
+          </strong>
+          <br>
+
           N'hésitez pas à nous contacter.
         </p>
 
         <p>
+
           📱 Catherine :
+
           <a
             class="telephone"
             href="tel:+33663471056"
@@ -615,24 +693,29 @@
           <br>
 
           📱 Freddy :
+
           <a
             class="telephone"
             href="tel:+33640114778"
           >
             06 40 11 47 78
           </a>
+
         </p>
 
       </div>
 
 
       <p>
-        Toutes les informations utiles concernant le déroulement de la journée seront disponibles ici.
+        Toutes les informations utiles concernant
+        le déroulement de la journée seront
+        disponibles ici.
       </p>
 
       <p>
-        Pensez à revenir consulter cette page avant le mariage :
-        nous la mettrons à jour au fur et à mesure.
+        Pensez à revenir consulter cette page
+        avant le mariage : nous la mettrons à jour
+        au fur et à mesure.
       </p>
 
     </div>
@@ -641,19 +724,23 @@
 
 
   <!-- =========================
-       CONFIRMATION DE PRÉSENCE
+       PRÉSENCE
        ========================= -->
 
   <section>
 
-    <h2>Votre présence ❤️</h2>
+    <h2>
+      Votre présence ❤️
+    </h2>
 
     <p>
-      Votre présence à nos côtés rendra cette journée encore plus belle.
+      Votre présence à nos côtés rendra cette
+      journée encore plus belle.
     </p>
 
     <p>
-      Merci de nous confirmer votre présence avant la fin du mois d'Avril.
+      Merci de nous confirmer votre présence
+      avant la fin du mois d'Avril.
     </p>
 
     <a
@@ -684,6 +771,17 @@
 
     17 • 07 • 2027
 
+
+    <!-- PETIT BOUTON SECRET -->
+
+    <div class="secret-link">
+
+      <a href="secret.html">
+        Ne pas cliquer ici
+      </a>
+
+    </div>
+
   </footer>
 
 
@@ -698,48 +796,74 @@
 
     function compteur() {
 
-      const maintenant = new Date();
-      const difference = dateMariage - maintenant;
+      const maintenant =
+        new Date();
+
+      const difference =
+        dateMariage - maintenant;
+
 
       if (difference <= 0) {
 
         document.getElementById("jours").innerText = "0";
+
         document.getElementById("heures").innerText = "0";
+
         document.getElementById("minutes").innerText = "0";
+
         document.getElementById("secondes").innerText = "0";
 
         return;
       }
 
+
       const jours =
         Math.floor(
-          difference / (1000 * 60 * 60 * 24)
+          difference /
+          (1000 * 60 * 60 * 24)
         );
+
 
       const heures =
         Math.floor(
-          (difference / (1000 * 60 * 60)) % 24
+          (difference /
+          (1000 * 60 * 60)) % 24
         );
+
 
       const minutes =
         Math.floor(
-          (difference / (1000 * 60)) % 60
+          (difference /
+          (1000 * 60)) % 60
         );
+
 
       const secondes =
         Math.floor(
           (difference / 1000) % 60
         );
 
-      document.getElementById("jours").innerText = jours;
-      document.getElementById("heures").innerText = heures;
-      document.getElementById("minutes").innerText = minutes;
-      document.getElementById("secondes").innerText = secondes;
+
+      document.getElementById("jours").innerText =
+        jours;
+
+      document.getElementById("heures").innerText =
+        heures;
+
+      document.getElementById("minutes").innerText =
+        minutes;
+
+      document.getElementById("secondes").innerText =
+        secondes;
     }
+
 
     compteur();
 
-    setInterval(compteur, 1000);
+    setInterval(
+      compteur,
+      1000
+    );
 
   </script>
 
