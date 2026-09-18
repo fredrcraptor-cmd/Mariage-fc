@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Mariage de Catherine & Freddy</title>
 
   <style>
+
     * {
       box-sizing: border-box;
     }
 
     body {
       margin: 0;
+
       font-family: Georgia, "Times New Roman", serif;
+
       background: #faf7f1;
       color: #3f493f;
+
       text-align: center;
     }
 
-    /* =========================
-       BANDEAU D'ACCUEIL
-       ========================= */
+
+    /* ========================================
+       PAGE D'ACCUEIL
+       ======================================== */
 
     .hero {
       min-height: 100vh;
+
       position: relative;
       overflow: hidden;
 
@@ -44,239 +52,367 @@
         );
     }
 
+
     .hero-contenu {
       position: relative;
       z-index: 2;
+
       max-width: 650px;
     }
 
-    /* =========================
-       MONOGRAMMES
-       ========================= */
+
+    /* DÉCORATIONS */
 
     .deco {
       position: absolute;
+
       z-index: 1;
 
       width: 430px;
       max-width: 30vw;
+
       height: auto;
 
       top: 50%;
+
       transform: translateY(-50%);
 
-      filter: drop-shadow(0 8px 15px rgba(0,0,0,0.10));
+      filter:
+        drop-shadow(
+          0 8px 15px rgba(0,0,0,.10)
+        );
     }
+
 
     .deco-gauche {
       left: 7%;
     }
 
+
     .deco-droite {
       right: 7%;
-      transform: translateY(-50%);
+
+      transform:
+        translateY(-50%);
     }
+
+
+    /* MONOGRAMME */
 
     .monogramme {
       font-size: 72px;
+
       color: #71806c;
-      margin-bottom: 15px;
+
       letter-spacing: 4px;
     }
 
+
     h1 {
       font-size: 38px;
+
       font-weight: normal;
-      margin: 5px 0;
+
+      margin: 10px 0;
     }
 
-    .invitation {
-      font-style: italic;
-      font-size: 19px;
-      margin: 20px auto;
-      max-width: 500px;
-      line-height: 1.6;
-    }
-
-    .date {
-      font-size: 25px;
-      margin-top: 20px;
-      color: #71806c;
-    }
 
     .trait {
       width: 80px;
       height: 1px;
+
       background: #9aa895;
-      margin: 30px auto;
+
+      margin: 25px auto;
     }
 
-    /* =========================
-       SECTIONS
-       ========================= */
 
-    section {
-      padding: 60px 20px;
-      max-width: 800px;
-      margin: auto;
-    }
+    .invitation {
+      font-size: 19px;
 
-    h2 {
-      font-size: 30px;
-      font-weight: normal;
-      color: #71806c;
-    }
+      font-style: italic;
 
-    p {
-      font-size: 18px;
       line-height: 1.7;
     }
 
-    /* =========================
-       COMPTE À REBOURS
-       ========================= */
 
-    .countdown {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
-    }
+    .date {
+      font-size: 25px;
 
-    .temps {
-      background: white;
-      min-width: 80px;
-      padding: 18px 10px;
-      border-radius: 12px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.07);
-    }
-
-    .nombre {
-      display: block;
-      font-size: 30px;
       color: #71806c;
+
+      margin-top: 25px;
     }
 
-    .label {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
 
-    /* =========================
-       PROGRAMME
-       ========================= */
+    /* ========================================
+       SECTIONS
+       ======================================== */
 
-    .programme {
-      background: #eee9df;
-      max-width: none;
-    }
+    section {
+      padding: 60px 20px;
 
-    .lieu {
-      background: white;
-      margin: 25px auto;
-      padding: 30px 20px;
-      border-radius: 15px;
-      max-width: 600px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-    }
+      max-width: 800px;
 
-    .heure {
-      font-size: 24px;
-      color: #71806c;
-      font-weight: bold;
-    }
-
-    .bouton {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 14px 25px;
-      background: #71806c;
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-      font-family: Arial, sans-serif;
-      font-size: 15px;
-      transition: 0.2s;
-    }
-
-    .bouton:hover {
-      transform: scale(1.04);
-      background: #596653;
-    }
-
-    /* =========================
-       INFORMATIONS
-       ========================= */
-
-    .infos {
-      max-width: 600px;
       margin: auto;
     }
 
-    .dress-code {
-      background: white;
-      margin: 25px auto;
-      padding: 22px 20px;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+
+    h2 {
+      font-size: 30px;
+
+      font-weight: normal;
+
+      color: #71806c;
     }
 
-    .telephone {
+
+    p {
+      font-size: 18px;
+
+      line-height: 1.7;
+    }
+
+
+    /* ========================================
+       COMPTE À REBOURS
+       ======================================== */
+
+    .countdown {
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 15px;
+
+      margin-top: 35px;
+    }
+
+
+    .temps {
+      min-width: 110px;
+
+      padding: 20px;
+
+      background: white;
+
+      border-radius: 12px;
+
+      box-shadow:
+        0 5px 20px rgba(0,0,0,.07);
+    }
+
+
+    .nombre {
+      display: block;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 32px;
+
       color: #71806c;
-      text-decoration: none;
+
       font-weight: bold;
     }
 
-    /* =========================
+
+    .unite {
+      font-family: Arial, sans-serif;
+
+      font-size: 12px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+    }
+
+
+    /* ========================================
+       PROGRAMME
+       ======================================== */
+
+    .programme {
+      max-width: none;
+
+      background: #eee9df;
+    }
+
+
+    .programme-contenu {
+      max-width: 800px;
+
+      margin: auto;
+    }
+
+
+    .lieu {
+      max-width: 600px;
+
+      margin: 25px auto;
+
+      padding: 30px 20px;
+
+      background: white;
+
+      border-radius: 15px;
+
+      box-shadow:
+        0 5px 20px rgba(0,0,0,.07);
+    }
+
+
+    .heure {
+      font-size: 24px;
+
+      font-weight: bold;
+
+      color: #71806c;
+    }
+
+
+    /* ========================================
+       BOUTONS
+       ======================================== */
+
+    .bouton {
+      display: inline-block;
+
+      margin-top: 15px;
+
+      padding: 13px 25px;
+
+      background: #71806c;
+
+      color: white;
+
+      text-decoration: none;
+
+      border-radius: 30px;
+
+      font-family: Arial, sans-serif;
+
+      transition: .2s;
+    }
+
+
+    .bouton:hover {
+      background: #596653;
+
+      transform: scale(1.04);
+    }
+
+
+    /* ========================================
+       INFORMATIONS
+       ======================================== */
+
+    .infos {
+      max-width: 600px;
+    }
+
+
+    .dress-code {
+      margin: 25px auto;
+
+      padding: 22px;
+
+      background: white;
+
+      border-radius: 15px;
+
+      box-shadow:
+        0 5px 20px rgba(0,0,0,.05);
+    }
+
+
+    .telephone {
+      color: #71806c;
+
+      font-weight: bold;
+
+      text-decoration: none;
+    }
+
+
+    /* ========================================
        FOOTER
-       ========================= */
+       ======================================== */
 
     footer {
-      background: #71806c;
-      color: white;
       padding: 45px 20px 18px;
+
+      background: #71806c;
+
+      color: white;
     }
+
 
     footer .fc {
       font-size: 38px;
+
       margin-bottom: 10px;
     }
 
-    /* Petit bouton secret */
+
+    footer p {
+      margin: 5px 0;
+
+      font-size: 16px;
+    }
+
+
+    /* ========================================
+       EASTER EGG
+       ======================================== */
 
     .secret-link {
       margin-top: 30px;
     }
 
+
     .secret-link a {
       display: inline-block;
 
-      color: rgba(255,255,255,0.42);
+      color: rgba(255,255,255,.85);
+
       text-decoration: none;
 
       font-family: Arial, sans-serif;
-      font-size: 10px;
+
+      font-size: 13px;
 
       letter-spacing: 1px;
 
-      padding: 5px 10px;
+      padding: 8px 16px;
 
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 15px;
+      border:
+        1px solid rgba(255,255,255,.45);
 
-      transition: 0.3s;
+      border-radius: 20px;
+
+      background:
+        rgba(255,255,255,.08);
+
+      transition: .3s;
     }
+
 
     .secret-link a:hover {
-      color: white;
-      border-color: rgba(255,255,255,0.7);
+      color: #71806c;
+
+      background: white;
+
+      border-color: white;
+
+      transform: scale(1.05);
     }
 
-    /* =========================
+
+    /* ========================================
        TABLETTE
-       ========================= */
+       ======================================== */
 
     @media (max-width: 1000px) {
 
@@ -285,23 +421,29 @@
         padding-right: 220px;
       }
 
+
       .deco {
         width: 250px;
+
         max-width: 30vw;
       }
+
 
       .deco-gauche {
         left: 3%;
       }
 
+
       .deco-droite {
         right: 3%;
       }
+
     }
 
-    /* =========================
+
+    /* ========================================
        MOBILE
-       ========================= */
+       ======================================== */
 
     @media (max-width: 700px) {
 
@@ -314,8 +456,10 @@
         overflow: hidden;
       }
 
+
       .hero-contenu {
         position: relative;
+
         z-index: 3;
 
         width: 100%;
@@ -324,75 +468,100 @@
         margin: auto;
       }
 
+
       .deco {
         width: 175px;
+
         max-width: none;
 
         height: auto;
 
-        opacity: 0.95;
+        opacity: .95;
 
         filter:
           drop-shadow(
-            0 5px 10px rgba(0,0,0,0.08)
+            0 5px 10px rgba(0,0,0,.08)
           );
       }
 
+
       .deco-gauche {
         top: 20px;
+
         left: -35px;
 
         transform: none;
       }
 
+
       .deco-droite {
         top: auto;
+
         bottom: 20px;
+
         right: -35px;
 
         transform: none;
       }
 
+
       .monogramme {
         font-size: 48px;
+
         letter-spacing: 3px;
+
         margin-bottom: 12px;
       }
 
+
       h1 {
         font-size: 30px;
+
         line-height: 1.2;
+
         margin: 8px 0;
       }
 
+
       .trait {
         width: 65px;
+
         margin: 22px auto;
       }
 
+
       .invitation {
         font-size: 17px;
+
         line-height: 1.6;
+
         margin: 18px auto;
       }
 
+
       .date {
         font-size: 21px;
+
         line-height: 1.4;
+
         margin-top: 18px;
       }
+
 
       section {
         padding: 45px 18px;
       }
 
+
       h2 {
         font-size: 27px;
       }
 
+
       p {
         font-size: 17px;
       }
+
 
       .countdown {
         display: grid;
@@ -405,25 +574,32 @@
         gap: 12px;
       }
 
+
       .temps {
         width: 100%;
+
         min-width: 0;
 
         padding: 16px 8px;
       }
 
+
       .nombre {
         font-size: 28px;
       }
 
+
       .lieu {
         padding: 25px 16px;
+
         margin: 20px auto;
       }
+
 
       .dress-code {
         padding: 20px 16px;
       }
+
 
       .bouton {
         max-width: 100%;
@@ -432,19 +608,29 @@
 
         line-height: 1.4;
       }
+
+
+      .secret-link a {
+        font-size: 13px;
+
+        padding: 9px 16px;
+      }
+
     }
 
   </style>
+
 </head>
 
 
 <body>
 
-  <!-- =========================
-       ACCUEIL
-       ========================= -->
 
-  <div class="hero">
+  <!-- ========================================
+       ACCUEIL
+       ======================================== -->
+
+  <header class="hero">
 
     <img
       src="monogramme.png"
@@ -452,11 +638,13 @@
       alt=""
     >
 
+
     <img
       src="monogramme.png"
       class="deco deco-droite"
       alt=""
     >
+
 
     <div class="hero-contenu">
 
@@ -464,29 +652,38 @@
         C & F
       </div>
 
+
       <h1>
         Catherine & Freddy
       </h1>
 
+
       <div class="trait"></div>
 
+
       <p class="invitation">
+
         Nous avons le plaisir de vous inviter<br>
         à célébrer notre mariage.
+
       </p>
 
+
       <div class="date">
+
         Samedi 17 juillet 2027
+
       </div>
 
     </div>
 
-  </div>
+  </header>
 
 
-  <!-- =========================
+
+  <!-- ========================================
        COMPTE À REBOURS
-       ========================= -->
+       ======================================== -->
 
   <section>
 
@@ -494,31 +691,74 @@
       Le grand jour approche…
     </h2>
 
+
     <p>
+
       Nous avons hâte de partager cette journée
       si particulière avec vous.
+
     </p>
+
 
     <div class="countdown">
 
       <div class="temps">
-        <span class="nombre" id="jours">0</span>
-        <span class="label">Jours</span>
+
+        <span
+          class="nombre"
+          id="jours">
+          0
+        </span>
+
+        <span class="unite">
+          Jours
+        </span>
+
       </div>
 
-      <div class="temps">
-        <span class="nombre" id="heures">0</span>
-        <span class="label">Heures</span>
-      </div>
 
       <div class="temps">
-        <span class="nombre" id="minutes">0</span>
-        <span class="label">Minutes</span>
+
+        <span
+          class="nombre"
+          id="heures">
+          0
+        </span>
+
+        <span class="unite">
+          Heures
+        </span>
+
       </div>
 
+
       <div class="temps">
-        <span class="nombre" id="secondes">0</span>
-        <span class="label">Secondes</span>
+
+        <span
+          class="nombre"
+          id="minutes">
+          0
+        </span>
+
+        <span class="unite">
+          Minutes
+        </span>
+
+      </div>
+
+
+      <div class="temps">
+
+        <span
+          class="nombre"
+          id="secondes">
+          0
+        </span>
+
+        <span class="unite">
+          Secondes
+        </span>
+
       </div>
 
     </div>
@@ -526,206 +766,244 @@
   </section>
 
 
-  <!-- =========================
+
+  <!-- ========================================
        PROGRAMME
-       ========================= -->
+       ======================================== -->
 
   <section class="programme">
 
-    <h2>
-      Le programme
-    </h2>
+    <div class="programme-contenu">
 
-    <div class="lieu">
-
-      <div class="heure">
-        16h00
-      </div>
-
-      <h3>
-        Cérémonie civile
-      </h3>
-
-      <p>
-        Mairie de Dol-de-Bretagne<br>
-        35120 Dol-de-Bretagne
-      </p>
-
-      <a
-        class="bouton"
-        href="https://www.google.com/maps/search/?api=1&query=Mairie+de+Dol-de-Bretagne+35120"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        📍 Ouvrir dans Google Maps
-      </a>
-
-    </div>
+      <h2>
+        Le programme
+      </h2>
 
 
-    <div class="lieu">
+      <!-- MAIRIE -->
 
-      <h3>
-        🥂 La Réception
-      </h3>
+      <div class="lieu">
 
-      <p>
-        Après la cérémonie,<br>
-        retrouvons-nous pour poursuivre
-        les festivités.
-      </p>
-
-      <p>
-        <strong>
-          Salle intergénérationelle de Hirel
-        </strong>
-        <br>
-        36 Rue des Alleux, 35120 Hirel
-      </p>
-
-      <a
-        class="bouton"
-        href="https://www.google.com/maps/place/Salle+interg%C3%A9n%C3%A9rationnelle/@48.6016308,-1.8072601,17z/data=!4m6!3m5!1s0x480e99abf5a887e3:0x8881bbe5886d8330!8m2!3d48.6016273!4d-1.8046852!16s%2Fg%2F11h126jrbj"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        📍 Ouvrir dans Google Maps
-      </a>
-
-    </div>
-
-  </section>
+        <div class="heure">
+          16h00
+        </div>
 
 
-  <!-- =========================
-       INFORMATIONS
-       ========================= -->
+        <h3>
+          💍 Cérémonie civile
+        </h3>
 
-  <section>
-
-    <h2>
-      Informations pratiques
-    </h2>
-
-    <div class="infos">
-
-      <div class="dress-code">
 
         <p>
-          <strong>
-            🌿 Thème
-          </strong>
-          <br>
-          Champêtre
+
+          Mairie de Dol-de-Bretagne<br>
+          35120 Dol-de-Bretagne
+
         </p>
 
-      </div>
-
-
-      <div class="dress-code">
-
-        <p>
-          <strong>
-            ⚠️ Important – Hébergement
-          </strong>
-          <br>
-
-          Si vous venez de loin et souhaitez
-          dormir sur place ou aux alentours,
-          pensez à réserver votre gîte ou votre
-          hébergement suffisamment à l'avance.
-
-          Les hébergements peuvent vite être
-          complets en période estivale.
-        </p>
-
-      </div>
-
-
-      <div class="dress-code">
-
-        <p>
-          <strong>
-            🛏️ Où dormir ?
-          </strong>
-          <br>
-
-          Retrouvez facilement les gîtes,
-          chambres d'hôtes et autres
-          hébergements disponibles à Hirel
-          et aux alentours.
-        </p>
 
         <a
           class="bouton"
-          href="https://www.google.com/maps/search/?api=1&query=gites+chambres+d%27hotes+hebergements+Hirel+35120"
+          href="https://www.google.com/maps/search/?api=1&query=Mairie+de+Dol-de-Bretagne+35120"
           target="_blank"
-          rel="noopener noreferrer"
-        >
-          🏡 Voir les hébergements autour de Hirel
+          rel="noopener">
+
+          📍 Voir sur Google Maps
+
         </a>
 
       </div>
 
 
-      <div class="dress-code">
+
+      <!-- RÉCEPTION -->
+
+      <div class="lieu">
+
+        <h3>
+          🥂 La Réception
+        </h3>
+
 
         <p>
-          <strong>
-            📞 Une question ?
-          </strong>
-          <br>
 
-          N'hésitez pas à nous contacter.
+          Après la cérémonie,<br>
+          retrouvons-nous pour poursuivre les festivités.
+
         </p>
+
 
         <p>
 
-          📱 Catherine :
-
-          <a
-            class="telephone"
-            href="tel:+33663471056"
-          >
-            06 63 47 10 56
-          </a>
-
-          <br>
-
-          📱 Freddy :
-
-          <a
-            class="telephone"
-            href="tel:+33640114778"
-          >
-            06 40 11 47 78
-          </a>
+          Salle intergénérationelle de Hirel<br>
+          36 Rue des Alleux<br>
+          35120 Hirel
 
         </p>
+
+
+        <a
+          class="bouton"
+          href="https://www.google.com/maps/place/Salle+interg%C3%A9n%C3%A9rationnelle/@48.6016308,-1.8072601,17z/data=!4m6!3m5!1s0x480e99abf5a887e3:0x8881bbe5886d8330!8m2!3d48.6016273!4d-1.8046852!16s%2Fg%2F11h126jrbj"
+          target="_blank"
+          rel="noopener">
+
+          📍 Voir sur Google Maps
+
+        </a>
 
       </div>
-
-
-      <p>
-        Toutes les informations utiles concernant
-        le déroulement de la journée seront
-        disponibles ici.
-      </p>
-
-      <p>
-        Pensez à revenir consulter cette page
-        avant le mariage : nous la mettrons à jour
-        au fur et à mesure.
-      </p>
 
     </div>
 
   </section>
 
 
-  <!-- =========================
-       PRÉSENCE
-       ========================= -->
+
+  <!-- ========================================
+       INFORMATIONS PRATIQUES
+       ======================================== -->
+
+  <section class="infos">
+
+    <h2>
+      Informations pratiques
+    </h2>
+
+
+    <div class="dress-code">
+
+      <h3>
+        🌿 Thème
+      </h3>
+
+      <p>
+        Champêtre
+      </p>
+
+    </div>
+
+
+
+    <div class="dress-code">
+
+      <h3>
+        ⚠️ Important – Hébergement
+      </h3>
+
+
+      <p>
+
+        Si vous venez de loin et souhaitez dormir
+        sur place ou aux alentours, pensez à réserver
+        votre gîte ou votre hébergement suffisamment
+        à l'avance.
+
+      </p>
+
+
+      <p>
+
+        Les hébergements peuvent vite être complets
+        en période estivale.
+
+      </p>
+
+    </div>
+
+
+
+    <div class="dress-code">
+
+      <h3>
+        🛏️ Où dormir ?
+      </h3>
+
+
+      <p>
+
+        Retrouvez les hébergements disponibles
+        autour de Hirel.
+
+      </p>
+
+
+      <a
+        class="bouton"
+        href="https://www.google.com/maps/search/?api=1&query=gites+chambres+d%27hotes+hebergements+Hirel+35120"
+        target="_blank"
+        rel="noopener">
+
+        🔎 Voir les hébergements
+
+      </a>
+
+    </div>
+
+
+
+    <div class="dress-code">
+
+      <h3>
+        📞 Nous contacter
+      </h3>
+
+
+      <p>
+
+        Catherine<br>
+
+        <a
+          class="telephone"
+          href="tel:+33663471056">
+
+          📱 06 63 47 10 56
+
+        </a>
+
+      </p>
+
+
+      <p>
+
+        Freddy<br>
+
+        <a
+          class="telephone"
+          href="tel:+33640114778">
+
+          📱 06 40 11 47 78
+
+        </a>
+
+      </p>
+
+    </div>
+
+
+    <p>
+
+      Toutes les informations utiles concernant
+      le déroulement de la journée seront disponibles ici.
+
+    </p>
+
+
+    <p>
+
+      Pensez à revenir consulter cette page avant
+      le mariage : nous la mettrons à jour
+      au fur et à mesure.
+
+    </p>
+
+  </section>
+
+
+
+  <!-- ========================================
+       RSVP
+       ======================================== -->
 
   <section>
 
@@ -733,31 +1011,40 @@
       Votre présence ❤️
     </h2>
 
-    <p>
-      Votre présence à nos côtés rendra cette
-      journée encore plus belle.
-    </p>
 
     <p>
+
+      Votre présence à nos côtés rendra
+      cette journée encore plus belle.
+
+    </p>
+
+
+    <p>
+
       Merci de nous confirmer votre présence
       avant la fin du mois d'Avril.
+
     </p>
+
 
     <a
       class="bouton"
       href="https://forms.gle/oitb5Cvn5NVM79G36"
       target="_blank"
-      rel="noopener noreferrer"
-    >
+      rel="noopener">
+
       💌 Confirmer ma présence
+
     </a>
 
   </section>
 
 
-  <!-- =========================
+
+  <!-- ========================================
        PIED DE PAGE
-       ========================= -->
+       ======================================== -->
 
   <footer>
 
@@ -765,19 +1052,24 @@
       C & F
     </div>
 
-    Catherine & Freddy
 
-    <br><br>
+    <p>
+      Catherine & Freddy
+    </p>
 
-    17 • 07 • 2027
+
+    <p>
+      17 • 07 • 2027
+    </p>
 
 
-    <!-- PETIT BOUTON SECRET -->
+
+    <!-- EASTER EGG -->
 
     <div class="secret-link">
 
       <a href="secret.html">
-        Ne pas cliquer ici
+        👀 Ne surtout pas cliquer ici…
       </a>
 
     </div>
@@ -785,19 +1077,22 @@
   </footer>
 
 
-  <!-- =========================
+
+  <!-- ========================================
        COMPTE À REBOURS
-       ========================= -->
+       ======================================== -->
 
   <script>
 
     const dateMariage =
       new Date("2027-07-17T16:00:00");
 
-    function compteur() {
+
+    function actualiserCompteARebours() {
 
       const maintenant =
         new Date();
+
 
       const difference =
         dateMariage - maintenant;
@@ -805,36 +1100,38 @@
 
       if (difference <= 0) {
 
-        document.getElementById("jours").innerText = "0";
+        document.getElementById("jours").textContent =
+          "0";
 
-        document.getElementById("heures").innerText = "0";
+        document.getElementById("heures").textContent =
+          "0";
 
-        document.getElementById("minutes").innerText = "0";
+        document.getElementById("minutes").textContent =
+          "0";
 
-        document.getElementById("secondes").innerText = "0";
+        document.getElementById("secondes").textContent =
+          "0";
 
         return;
+
       }
 
 
       const jours =
         Math.floor(
-          difference /
-          (1000 * 60 * 60 * 24)
+          difference / (1000 * 60 * 60 * 24)
         );
 
 
       const heures =
         Math.floor(
-          (difference /
-          (1000 * 60 * 60)) % 24
+          (difference / (1000 * 60 * 60)) % 24
         );
 
 
       const minutes =
         Math.floor(
-          (difference /
-          (1000 * 60)) % 60
+          (difference / (1000 * 60)) % 60
         );
 
 
@@ -844,28 +1141,35 @@
         );
 
 
-      document.getElementById("jours").innerText =
+      document.getElementById("jours").textContent =
         jours;
 
-      document.getElementById("heures").innerText =
+
+      document.getElementById("heures").textContent =
         heures;
 
-      document.getElementById("minutes").innerText =
+
+      document.getElementById("minutes").textContent =
         minutes;
 
-      document.getElementById("secondes").innerText =
+
+      document.getElementById("secondes").textContent =
         secondes;
+
     }
 
 
-    compteur();
+    actualiserCompteARebours();
+
 
     setInterval(
-      compteur,
+      actualiserCompteARebours,
       1000
     );
 
   </script>
 
+
 </body>
+
 </html>
