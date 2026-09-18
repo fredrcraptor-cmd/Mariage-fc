@@ -71,7 +71,7 @@
 
     .deco-droite {
       right: 15px;
-      transform: translateY(-50%) scaleX(-1);
+      transform: translateY(-50%);
     }
 
     .monogramme {
@@ -204,7 +204,7 @@
     }
 
     /* =========================
-       INFORMATIONS
+       INFORMATIONS PRATIQUES
        ========================= */
 
     .infos {
@@ -227,7 +227,7 @@
     }
 
     /* =========================
-       FOOTER
+       PIED DE PAGE
        ========================= */
 
     footer {
@@ -256,7 +256,6 @@
         width: 250px;
         max-width: 30vw;
       }
-
     }
 
     /* =========================
@@ -317,17 +316,19 @@
 <body>
 
   <!-- =========================
-       ACCUEIL
+       BANDEAU D'ACCUEIL
        ========================= -->
 
   <div class="hero">
 
+    <!-- Monogramme gauche -->
     <img
       src="monogramme.png"
       class="deco deco-gauche"
       alt=""
     >
 
+    <!-- Monogramme droite -->
     <img
       src="monogramme.png"
       class="deco deco-droite"
@@ -336,7 +337,9 @@
 
     <div class="hero-contenu">
 
-      <div class="monogramme">C & F</div>
+      <div class="monogramme">
+        C & F
+      </div>
 
       <h1>Catherine & Freddy</h1>
 
@@ -405,7 +408,9 @@
 
     <div class="lieu">
 
-      <div class="heure">16h00</div>
+      <div class="heure">
+        16h00
+      </div>
 
       <h3>Cérémonie civile</h3>
 
@@ -418,6 +423,7 @@
         class="bouton"
         href="https://www.google.com/maps/search/?api=1&query=Mairie+de+Dol-de-Bretagne+35120"
         target="_blank"
+        rel="noopener noreferrer"
       >
         📍 Ouvrir dans Google Maps
       </a>
@@ -443,6 +449,7 @@
         class="bouton"
         href="https://www.google.com/maps/place/Salle+interg%C3%A9n%C3%A9rationnelle/@48.6016308,-1.8072601,17z/data=!4m6!3m5!1s0x480e99abf5a887e3:0x8881bbe5886d8330!8m2!3d48.6016273!4d-1.8046852!16s%2Fg%2F11h126jrbj"
         target="_blank"
+        rel="noopener noreferrer"
       >
         📍 Ouvrir dans Google Maps
       </a>
@@ -479,7 +486,6 @@
 
           Si vous venez de loin et souhaitez dormir sur place ou aux alentours,
           pensez à réserver votre gîte ou votre hébergement suffisamment à l'avance.
-
           Les hébergements peuvent vite être complets en période estivale.
         </p>
 
@@ -515,7 +521,6 @@
         </p>
 
         <p>
-
           📱 Catherine :
           <a
             class="telephone"
@@ -533,7 +538,6 @@
           >
             06 40 11 47 78
           </a>
-
         </p>
 
       </div>
@@ -617,7 +621,6 @@
       const difference =
         dateMariage - maintenant;
 
-
       if (difference <= 0) {
 
         document.getElementById("jours").innerText = "0";
@@ -628,13 +631,11 @@
         return;
       }
 
-
       const jours =
         Math.floor(
           difference /
           (1000 * 60 * 60 * 24)
         );
-
 
       const heures =
         Math.floor(
@@ -642,19 +643,16 @@
           (1000 * 60 * 60)) % 24
         );
 
-
       const minutes =
         Math.floor(
           (difference /
           (1000 * 60)) % 60
         );
 
-
       const secondes =
         Math.floor(
           (difference / 1000) % 60
         );
-
 
       document.getElementById("jours").innerText =
         jours;
@@ -667,16 +665,11 @@
 
       document.getElementById("secondes").innerText =
         secondes;
-
     }
-
 
     compteur();
 
-    setInterval(
-      compteur,
-      1000
-    );
+    setInterval(compteur, 1000);
 
   </script>
 
