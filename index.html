@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Mariage de Catherine & Freddy</title>
+  <title>Le petit secret de Catherine & Freddy</title>
 
   <style>
 
@@ -15,28 +15,17 @@
 
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background: #faf7f1;
-      color: #3f493f;
-      text-align: center;
-    }
-
-
-    /* ========================================
-       ACCUEIL
-       ======================================== */
-
-    .hero {
       min-height: 100vh;
-      position: relative;
-      overflow: hidden;
+      padding: 25px 15px;
 
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
 
-      padding: 60px 360px;
+      font-family: Georgia, "Times New Roman", serif;
+      text-align: center;
+
+      color: #3f493f;
 
       background:
         radial-gradient(
@@ -45,190 +34,486 @@
           #f8f4ec 55%,
           #e9e2d5 100%
         );
+
+      overflow-x: hidden;
     }
 
-    .hero-contenu {
+
+    /* ==============================
+       CONTENEUR
+       ============================== */
+
+    .contenu {
+      width: 100%;
+      max-width: 620px;
+    }
+
+
+    .carte {
       position: relative;
-      z-index: 2;
-      max-width: 650px;
-    }
-
-
-    /* DÉCORATIONS */
-
-    .deco {
-      position: absolute;
-      z-index: 1;
-
-      width: 430px;
-      max-width: 30vw;
-      height: auto;
-
-      top: 50%;
-      transform: translateY(-50%);
-
-      filter:
-        drop-shadow(
-          0 8px 15px rgba(0,0,0,.10)
-        );
-    }
-
-    .deco-gauche {
-      left: 7%;
-    }
-
-    .deco-droite {
-      right: 7%;
-      transform: translateY(-50%);
-    }
-
-
-    /* TITRES */
-
-    .monogramme {
-      font-size: 72px;
-      color: #71806c;
-      letter-spacing: 4px;
-    }
-
-    h1 {
-      font-size: 38px;
-      font-weight: normal;
-      margin: 10px 0;
-    }
-
-    .trait {
-      width: 80px;
-      height: 1px;
-      background: #9aa895;
-      margin: 25px auto;
-    }
-
-    .invitation {
-      font-size: 19px;
-      font-style: italic;
-      line-height: 1.7;
-    }
-
-    .date {
-      font-size: 25px;
-      color: #71806c;
-      margin-top: 25px;
-    }
-
-
-    /* ========================================
-       SECTIONS
-       ======================================== */
-
-    section {
-      padding: 60px 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    h2 {
-      font-size: 30px;
-      font-weight: normal;
-      color: #71806c;
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 1.7;
-    }
-
-
-    /* ========================================
-       COMPTE À REBOURS
-       ======================================== */
-
-    .countdown {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-
-      gap: 15px;
-      margin-top: 35px;
-    }
-
-    .temps {
-      min-width: 110px;
-      padding: 20px;
 
       background: white;
 
-      border-radius: 12px;
+      padding: 42px 30px;
+
+      border-radius: 22px;
 
       box-shadow:
-        0 5px 20px rgba(0,0,0,.07);
+        0 12px 40px rgba(0,0,0,.10);
+
+      overflow: hidden;
     }
 
-    .nombre {
-      display: block;
 
+    /* ==============================
+       QUIZ
+       ============================== */
+
+    .petit-titre {
       font-family: Arial, sans-serif;
-      font-size: 32px;
-      font-weight: bold;
 
-      color: #71806c;
-    }
+      font-size: 11px;
 
-    .unite {
-      font-family: Arial, sans-serif;
-      font-size: 12px;
+      letter-spacing: 3px;
 
       text-transform: uppercase;
+
+      color: #71806c;
+
+      margin-bottom: 20px;
+    }
+
+
+    .coeur {
+      font-size: 40px;
+
+      margin-bottom: 10px;
+    }
+
+
+    h1 {
+      margin: 10px 0 15px;
+
+      color: #71806c;
+
+      font-size: 34px;
+      font-weight: normal;
+    }
+
+
+    .question {
+      margin-bottom: 30px;
+
+      font-size: 21px;
+
+      line-height: 1.5;
+    }
+
+
+    .reponses {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 12px;
+    }
+
+
+    .reponse {
+      min-height: 58px;
+
+      padding: 14px;
+
+      border: 1px solid #d7dcd4;
+
+      border-radius: 14px;
+
+      background: #faf8f3;
+
+      color: #3f493f;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 15px;
+
+      cursor: pointer;
+
+      transition: .25s;
+    }
+
+
+    .reponse:hover {
+      background: #71806c;
+
+      color: white;
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 5px 12px rgba(0,0,0,.10);
+    }
+
+
+    #message {
+      min-height: 50px;
+
+      margin-top: 25px;
+
+      font-size: 18px;
+
+      line-height: 1.5;
+    }
+
+
+    .erreur {
+      color: #a45d57;
+    }
+
+
+    /* ==============================
+       ZONE DE TIRAGE
+       ============================== */
+
+    #tirage {
+      display: none;
+
+      margin-top: 25px;
+
+      animation:
+        apparition .5s ease;
+    }
+
+
+    .tirage-texte {
+      color: #71806c;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 15px;
+
       letter-spacing: 1px;
     }
 
 
-    /* ========================================
-       PROGRAMME
-       ======================================== */
+    .tirage-numero {
+      margin: 15px 0;
 
-    .programme {
-      max-width: none;
-      background: #eee9df;
+      color: #71806c;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 65px;
+      font-weight: bold;
+
+      letter-spacing: 7px;
     }
 
-    .programme-contenu {
-      max-width: 800px;
-      margin: auto;
+
+    .points {
+      font-size: 24px;
+
+      letter-spacing: 5px;
+
+      animation:
+        clignote 1s infinite;
     }
 
-    .lieu {
-      max-width: 600px;
 
-      margin: 25px auto;
-      padding: 30px 20px;
+    /* ==============================
+       TICKET
+       ============================== */
+
+    #ticket {
+      display: none;
+
+      position: relative;
+
+      margin-top: 25px;
+
+      padding: 35px 25px;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          145deg,
+          #fffdf8 0%,
+          #f6f0e5 100%
+        );
+
+      border:
+        2px dashed #8c9a87;
+
+      border-radius: 20px;
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,.08);
+
+      animation:
+        ticketArrive .8s ease;
+    }
+
+
+    /* petits trous façon ticket */
+
+    #ticket::before,
+    #ticket::after {
+      content: "";
+
+      position: absolute;
+
+      top: 50%;
+
+      width: 28px;
+      height: 28px;
 
       background: white;
 
-      border-radius: 15px;
+      border-radius: 50%;
 
-      box-shadow:
-        0 5px 20px rgba(0,0,0,.07);
+      transform:
+        translateY(-50%);
     }
 
-    .heure {
-      font-size: 24px;
-      font-weight: bold;
+
+    #ticket::before {
+      left: -15px;
+    }
+
+
+    #ticket::after {
+      right: -15px;
+    }
+
+
+    /* C & F en filigrane */
+
+    .filigrane {
+      position: absolute;
+
+      top: 50%;
+      left: 50%;
+
+      transform:
+        translate(-50%, -50%) rotate(-12deg);
+
+      color:
+        rgba(113,128,108,.055);
+
+      font-size: 110px;
+
+      white-space: nowrap;
+
+      pointer-events: none;
+
+      user-select: none;
+    }
+
+
+    .ticket-contenu {
+      position: relative;
+
+      z-index: 2;
+    }
+
+
+    .ticket-icone {
+      font-size: 38px;
+
+      margin-bottom: 8px;
+    }
+
+
+    .ticket-titre {
       color: #71806c;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 15px;
+      font-weight: bold;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
     }
 
 
-    /* ========================================
-       BOUTONS
-       ======================================== */
+    .noms {
+      margin-top: 13px;
 
-    .bouton {
+      font-size: 25px;
+    }
+
+
+    .date-mariage {
+      margin-top: 5px;
+
+      color: #71806c;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 13px;
+
+      letter-spacing: 3px;
+    }
+
+
+    .separation {
+      width: 80px;
+      height: 1px;
+
+      margin: 23px auto;
+
+      background: #9aa895;
+    }
+
+
+    .ticket-label {
+      font-family: Arial, sans-serif;
+
+      font-size: 12px;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+
+      color: #555;
+    }
+
+
+    #numero {
+      margin: 5px 0 12px;
+
+      color: #71806c;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 78px;
+      font-weight: bold;
+
+      letter-spacing: 9px;
+
+      text-shadow:
+        0 3px 0 rgba(113,128,108,.10);
+    }
+
+
+    .chance {
+      margin-top: 10px;
+
+      font-size: 19px;
+
+      font-style: italic;
+    }
+
+
+    .info-loterie {
+      max-width: 390px;
+
+      margin: 23px auto 0;
+
+      padding: 16px;
+
+      background:
+        rgba(113,128,108,.09);
+
+      border-radius: 12px;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 14px;
+
+      line-height: 1.7;
+    }
+
+
+    .resultat {
+      margin-top: 20px;
+
+      color: #71806c;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 15px;
+
+      font-weight: bold;
+    }
+
+
+    .petite-note {
+      margin-top: 15px;
+
+      color: #777;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 11px;
+    }
+
+
+    /* ==============================
+       RAPPEL CAPTURE
+       ============================== */
+
+    .capture {
       display: inline-block;
 
-      margin-top: 15px;
-      padding: 13px 25px;
+      margin-top: 23px;
+
+      padding: 12px 20px;
+
+      border:
+        1px solid #71806c;
+
+      border-radius: 25px;
+
+      color: #71806c;
+
+      background: transparent;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 13px;
+
+      cursor: pointer;
+
+      transition: .25s;
+    }
+
+
+    .capture:hover {
+      background: #71806c;
+
+      color: white;
+    }
+
+
+    #captureMessage {
+      display: none;
+
+      margin-top: 12px;
+
+      color: #71806c;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 13px;
+    }
+
+
+    /* ==============================
+       RETOUR
+       ============================== */
+
+    .retour {
+      display: inline-block;
+
+      margin-top: 30px;
+
+      padding: 13px 22px;
 
       background: #71806c;
+
       color: white;
 
       text-decoration: none;
@@ -237,322 +522,202 @@
 
       font-family: Arial, sans-serif;
 
+      font-size: 14px;
+
       transition: .2s;
     }
 
-    .bouton:hover {
+
+    .retour:hover {
       background: #596653;
-      transform: scale(1.04);
+
+      transform: scale(1.03);
     }
 
 
-    /* ========================================
-       INFORMATIONS
-       ======================================== */
+    /* ==============================
+       CONFETTIS
+       ============================== */
 
-    .infos {
-      max-width: 600px;
-    }
+    .confetti {
+      position: fixed;
 
-    .dress-code {
-      margin: 25px auto;
-      padding: 22px;
+      top: -20px;
 
-      background: white;
+      z-index: 999;
 
-      border-radius: 15px;
+      font-size: 20px;
 
-      box-shadow:
-        0 5px 20px rgba(0,0,0,.05);
-    }
+      pointer-events: none;
 
-    .telephone {
-      color: #71806c;
-      font-weight: bold;
-      text-decoration: none;
+      animation:
+        tombe linear forwards;
     }
 
 
-    /* ========================================
-       INDICE DU JEU
-       ======================================== */
+    /* ==============================
+       ANIMATIONS
+       ============================== */
 
-    .indice-jeu {
-      max-width: 600px;
+    @keyframes apparition {
 
-      margin: 40px auto;
-      padding: 25px 20px;
-
-      background: #f3efe6;
-
-      border: 1px dashed #9aa895;
-      border-radius: 15px;
-
-      box-shadow:
-        0 5px 20px rgba(0,0,0,.05);
-    }
-
-    .indice-jeu .cadeau {
-      font-size: 32px;
-      margin-bottom: 5px;
-    }
-
-    .indice-jeu h3 {
-      margin: 5px 0 15px;
-
-      color: #71806c;
-
-      font-size: 21px;
-      font-weight: normal;
-    }
-
-    .indice-jeu p {
-      margin: 8px 0;
-    }
-
-    .indice-jeu .gagnant {
-      margin-top: 15px;
-
-      color: #71806c;
-
-      font-family: Arial, sans-serif;
-      font-size: 15px;
-      font-weight: bold;
-    }
-
-
-    /* ========================================
-       FOOTER
-       ======================================== */
-
-    footer {
-      padding: 45px 20px 18px;
-
-      background: #71806c;
-      color: white;
-    }
-
-    footer .fc {
-      font-size: 38px;
-      margin-bottom: 10px;
-    }
-
-    footer p {
-      margin: 5px 0;
-      font-size: 16px;
-    }
-
-
-    /* ========================================
-       LIEN SECRET
-       ======================================== */
-
-    .secret-link {
-      margin-top: 30px;
-    }
-
-    .secret-link a {
-      display: inline-block;
-
-      color: rgba(255,255,255,.85);
-
-      text-decoration: none;
-
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-
-      letter-spacing: 1px;
-
-      padding: 8px 16px;
-
-      border:
-        1px solid rgba(255,255,255,.45);
-
-      border-radius: 20px;
-
-      background:
-        rgba(255,255,255,.08);
-
-      transition: .3s;
-    }
-
-    .secret-link a:hover {
-      color: #71806c;
-
-      background: white;
-      border-color: white;
-
-      transform: scale(1.05);
-    }
-
-
-    /* ========================================
-       TABLETTE
-       ======================================== */
-
-    @media (max-width: 1000px) {
-
-      .hero {
-        padding-left: 220px;
-        padding-right: 220px;
+      from {
+        opacity: 0;
       }
 
-      .deco {
-        width: 250px;
-        max-width: 30vw;
+      to {
+        opacity: 1;
       }
 
-      .deco-gauche {
-        left: 3%;
-      }
-
-      .deco-droite {
-        right: 3%;
-      }
     }
 
 
-    /* ========================================
+    @keyframes ticketArrive {
+
+      0% {
+        opacity: 0;
+
+        transform:
+          translateY(25px) scale(.90);
+      }
+
+      70% {
+        transform:
+          translateY(-5px) scale(1.02);
+      }
+
+      100% {
+        opacity: 1;
+
+        transform:
+          translateY(0) scale(1);
+      }
+
+    }
+
+
+    @keyframes tremble {
+
+      0% {
+        transform: translateX(0);
+      }
+
+      25% {
+        transform: translateX(-7px);
+      }
+
+      50% {
+        transform: translateX(7px);
+      }
+
+      75% {
+        transform: translateX(-5px);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+
+    }
+
+
+    @keyframes clignote {
+
+      0%,
+      100% {
+        opacity: .3;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+    }
+
+
+    @keyframes tombe {
+
+      0% {
+        transform:
+          translateY(-20px) rotate(0deg);
+
+        opacity: 1;
+      }
+
+      100% {
+        transform:
+          translateY(110vh) rotate(500deg);
+
+        opacity: 0;
+      }
+
+    }
+
+
+    .tremble {
+      animation:
+        tremble .35s;
+    }
+
+
+    /* ==============================
        MOBILE
-       ======================================== */
+       ============================== */
 
-    @media (max-width: 700px) {
+    @media (max-width: 600px) {
 
-      .hero {
-        min-height: 100vh;
-        min-height: 100svh;
-
-        padding: 150px 24px;
-
-        overflow: hidden;
+      body {
+        padding: 15px 10px;
       }
 
-      .hero-contenu {
-        position: relative;
-        z-index: 3;
 
-        width: 100%;
-        max-width: 360px;
-
-        margin: auto;
+      .carte {
+        padding: 30px 17px;
       }
 
-      .deco {
-        width: 175px;
-        max-width: none;
-
-        height: auto;
-
-        opacity: .95;
-
-        filter:
-          drop-shadow(
-            0 5px 10px rgba(0,0,0,.08)
-          );
-      }
-
-      .deco-gauche {
-        top: 20px;
-        left: -35px;
-        transform: none;
-      }
-
-      .deco-droite {
-        top: auto;
-        bottom: 20px;
-        right: -35px;
-        transform: none;
-      }
-
-      .monogramme {
-        font-size: 48px;
-        letter-spacing: 3px;
-        margin-bottom: 12px;
-      }
 
       h1 {
-        font-size: 30px;
-        line-height: 1.2;
-        margin: 8px 0;
-      }
-
-      .trait {
-        width: 65px;
-        margin: 22px auto;
-      }
-
-      .invitation {
-        font-size: 17px;
-        line-height: 1.6;
-        margin: 18px auto;
-      }
-
-      .date {
-        font-size: 21px;
-        line-height: 1.4;
-        margin-top: 18px;
-      }
-
-      section {
-        padding: 45px 18px;
-      }
-
-      h2 {
-        font-size: 27px;
-      }
-
-      p {
-        font-size: 17px;
-      }
-
-      .countdown {
-        display: grid;
-
-        grid-template-columns:
-          repeat(2, minmax(0,120px));
-
-        justify-content: center;
-
-        gap: 12px;
-      }
-
-      .temps {
-        width: 100%;
-        min-width: 0;
-
-        padding: 16px 8px;
-      }
-
-      .nombre {
         font-size: 28px;
       }
 
-      .lieu {
-        padding: 25px 16px;
-        margin: 20px auto;
+
+      .question {
+        font-size: 19px;
       }
 
-      .dress-code {
-        padding: 20px 16px;
+
+      .reponses {
+        grid-template-columns: 1fr;
       }
 
-      .indice-jeu {
-        padding: 22px 16px;
-        margin: 30px auto;
+
+      .reponse {
+        font-size: 16px;
       }
 
-      .bouton {
-        max-width: 100%;
 
-        padding: 13px 20px;
-
-        line-height: 1.4;
+      #ticket {
+        padding:
+          30px 17px;
       }
 
-      .secret-link a {
-        font-size: 13px;
-        padding: 9px 16px;
+
+      #numero {
+        font-size: 62px;
+
+        letter-spacing: 6px;
       }
+
+
+      .filigrane {
+        font-size: 80px;
+      }
+
+
+      .tirage-numero {
+        font-size: 55px;
+      }
+
     }
 
   </style>
@@ -562,466 +727,576 @@
 
 <body>
 
+  <main class="contenu">
 
-  <!-- ========================================
-       ACCUEIL
-       ======================================== -->
-
-  <header class="hero">
-
-    <img
-      src="monogramme.png"
-      class="deco deco-gauche"
-      alt=""
+    <div
+      class="carte"
+      id="carte"
     >
 
-    <img
-      src="monogramme.png"
-      class="deco deco-droite"
-      alt=""
-    >
 
-    <div class="hero-contenu">
+      <!-- ==========================
+           QUIZ
+           ========================== -->
 
-      <div class="monogramme">
-        C & F
-      </div>
+      <div id="quiz">
 
-      <h1>
-        Catherine & Freddy
-      </h1>
-
-      <div class="trait"></div>
-
-      <p class="invitation">
-        Nous avons le plaisir de vous inviter<br>
-        à célébrer notre mariage.
-      </p>
-
-      <div class="date">
-        Samedi 17 juillet 2027
-      </div>
-
-    </div>
-
-  </header>
-
-
-
-  <!-- ========================================
-       COMPTE À REBOURS
-       ======================================== -->
-
-  <section>
-
-    <h2>
-      Le grand jour approche…
-    </h2>
-
-    <p>
-      Nous avons hâte de partager cette journée
-      si particulière avec vous.
-    </p>
-
-    <div class="countdown">
-
-      <div class="temps">
-        <span class="nombre" id="jours">0</span>
-        <span class="unite">Jours</span>
-      </div>
-
-      <div class="temps">
-        <span class="nombre" id="heures">0</span>
-        <span class="unite">Heures</span>
-      </div>
-
-      <div class="temps">
-        <span class="nombre" id="minutes">0</span>
-        <span class="unite">Minutes</span>
-      </div>
-
-      <div class="temps">
-        <span class="nombre" id="secondes">0</span>
-        <span class="unite">Secondes</span>
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ========================================
-       PROGRAMME
-       ======================================== -->
-
-  <section class="programme">
-
-    <div class="programme-contenu">
-
-      <h2>
-        Le programme
-      </h2>
-
-
-      <div class="lieu">
-
-        <div class="heure">
-          16h00
+        <div class="petit-titre">
+          Le petit quiz des mariés
         </div>
 
-        <h3>
-          💍 Cérémonie civile
-        </h3>
 
-        <p>
-          Mairie de Dol-de-Bretagne<br>
-          35120 Dol-de-Bretagne
+        <div class="coeur">
+          ❤️
+        </div>
+
+
+        <h1>
+          Puisque tu as cliqué…
+        </h1>
+
+
+        <p class="question">
+          Quelle est notre date de rencontre ?
         </p>
 
-        <a
-          class="bouton"
-          href="https://www.google.com/maps/search/?api=1&query=Mairie+de+Dol-de-Bretagne+35120"
-          target="_blank"
-          rel="noopener">
 
-          📍 Voir sur Google Maps
+        <div
+          class="reponses"
+          id="reponses"
+        >
 
-        </a>
+          <button
+            class="reponse"
+            onclick="mauvaiseReponse()"
+          >
+            14 février 2023
+          </button>
+
+
+          <button
+            class="reponse"
+            onclick="bonneReponse()"
+          >
+            25 janvier 2024
+          </button>
+
+
+          <button
+            class="reponse"
+            onclick="mauvaiseReponse()"
+          >
+            17 juillet 2024
+          </button>
+
+
+          <button
+            class="reponse"
+            onclick="mauvaiseReponse()"
+          >
+            25 janvier 2025
+          </button>
+
+        </div>
+
+
+        <div id="message"></div>
 
       </div>
 
 
-      <div class="lieu">
 
-        <h3>
-          🥂 La Réception
-        </h3>
+      <!-- ==========================
+           ANIMATION DU TIRAGE
+           ========================== -->
 
-        <p>
-          Après la cérémonie,<br>
-          retrouvons-nous pour poursuivre les festivités.
-        </p>
+      <div id="tirage">
 
-        <p>
-          Salle intergénérationelle de Hirel<br>
-          36 Rue des Alleux<br>
-          35120 Hirel
-        </p>
+        <div class="tirage-texte">
+          🎟️ Attribution de ton ticket
+        </div>
 
-        <a
-          class="bouton"
-          href="https://www.google.com/maps/place/Salle+interg%C3%A9n%C3%A9rationnelle/@48.6016308,-1.8072601,17z/data=!4m6!3m5!1s0x480e99abf5a887e3:0x8881bbe5886d8330!8m2!3d48.6016273!4d-1.8046852!16s%2Fg%2F11h126jrbj"
-          target="_blank"
-          rel="noopener">
 
-          📍 Voir sur Google Maps
+        <div
+          class="tirage-numero"
+          id="numeroAnimation"
+        >
+          001
+        </div>
 
-        </a>
+
+        <div class="points">
+          • • •
+        </div>
 
       </div>
 
-    </div>
-
-  </section>
 
 
+      <!-- ==========================
+           TICKET
+           ========================== -->
 
-  <!-- ========================================
-       INFORMATIONS PRATIQUES
-       ======================================== -->
+      <div id="ticket">
 
-  <section class="infos">
-
-    <h2>
-      Informations pratiques
-    </h2>
-
-
-    <div class="dress-code">
-
-      <h3>
-        🌿 Thème
-      </h3>
-
-      <p>
-        Champêtre
-      </p>
-
-    </div>
+        <div class="filigrane">
+          C & F
+        </div>
 
 
+        <div class="ticket-contenu">
 
-    <div class="dress-code">
-
-      <h3>
-        ⚠️ Important – Hébergement
-      </h3>
-
-      <p>
-        Si vous venez de loin et souhaitez dormir
-        sur place ou aux alentours, pensez à réserver
-        votre gîte ou votre hébergement suffisamment
-        à l'avance.
-      </p>
-
-      <p>
-        Les hébergements peuvent vite être complets
-        en période estivale.
-      </p>
-
-    </div>
+          <div class="ticket-icone">
+            🎟️
+          </div>
 
 
+          <div class="ticket-titre">
+            Loterie des mariés
+          </div>
 
-    <div class="dress-code">
 
-      <h3>
-        🛏️ Où dormir ?
-      </h3>
+          <div class="noms">
+            Catherine & Freddy
+          </div>
 
-      <p>
-        Retrouvez les hébergements disponibles
-        autour de Hirel.
-      </p>
+
+          <div class="date-mariage">
+            17 • 07 • 2027
+          </div>
+
+
+          <div class="separation"></div>
+
+
+          <div class="ticket-label">
+            Ticket N°
+          </div>
+
+
+          <div id="numero">
+            000
+          </div>
+
+
+          <div class="chance">
+            🍀 La chance est-elle avec toi ?
+          </div>
+
+
+          <div class="info-loterie">
+
+            🏆
+            <strong>
+              Un seul ticket est gagnant.
+            </strong>
+
+            <br>
+
+            Conserve précieusement ton numéro
+            jusqu'au mariage.
+
+          </div>
+
+
+          <div class="resultat">
+
+            🔒 Résultat dévoilé<br>
+            le 17 juillet 2027
+
+          </div>
+
+
+          <button
+            class="capture"
+            onclick="rappelCapture()"
+          >
+            📸 Enregistrer mon numéro
+          </button>
+
+
+          <div id="captureMessage">
+
+            📱 Fais une capture d'écran
+            de ton ticket pour le conserver !
+
+          </div>
+
+
+          <div class="petite-note">
+
+            Ton numéro reste également
+            enregistré sur cet appareil.
+
+          </div>
+
+        </div>
+
+      </div>
+
+
 
       <a
-        class="bouton"
-        href="https://www.google.com/maps/search/?api=1&query=gites+chambres+d%27hotes+hebergements+Hirel+35120"
-        target="_blank"
-        rel="noopener">
-
-        🔎 Voir les hébergements
-
+        href="index.html"
+        class="retour"
+      >
+        ← Retour au mariage
       </a>
 
     </div>
 
+  </main>
 
 
-    <div class="dress-code">
-
-      <h3>
-        📞 Nous contacter
-      </h3>
-
-      <p>
-        Catherine<br>
-
-        <a
-          class="telephone"
-          href="tel:+33663471056">
-
-          📱 06 63 47 10 56
-
-        </a>
-      </p>
-
-      <p>
-        Freddy<br>
-
-        <a
-          class="telephone"
-          href="tel:+33640114778">
-
-          📱 06 40 11 47 78
-
-        </a>
-      </p>
-
-    </div>
-
-
-
-    <!-- ========================================
-         INDICE DU JEU
-         ======================================== -->
-
-    <div class="indice-jeu">
-
-      <div class="cadeau">
-        🎁
-      </div>
-
-      <h3>
-        Une petite surprise se cache sur cette page…
-      </h3>
-
-      <p>
-        Ouvrez l'œil 👀<br>
-        Un petit jeu s'est glissé quelque part
-        dans notre faire-part.
-      </p>
-
-      <p>
-        <strong>
-          Saurez-vous le trouver ?
-        </strong>
-      </p>
-
-      <div class="gagnant">
-        🎟️ Un seul numéro sera gagnant ! 🏆
-      </div>
-
-    </div>
-
-
-
-    <p>
-      Toutes les informations utiles concernant
-      le déroulement de la journée seront disponibles ici.
-    </p>
-
-    <p>
-      Pensez à revenir consulter cette page avant
-      le mariage : nous la mettrons à jour
-      au fur et à mesure.
-    </p>
-
-  </section>
-
-
-
-  <!-- ========================================
-       RSVP
-       ======================================== -->
-
-  <section>
-
-    <h2>
-      Votre présence ❤️
-    </h2>
-
-    <p>
-      Votre présence à nos côtés rendra
-      cette journée encore plus belle.
-    </p>
-
-    <p>
-      Merci de nous confirmer votre présence
-      avant la fin du mois d'Avril.
-    </p>
-
-    <a
-      class="bouton"
-      href="https://forms.gle/oitb5Cvn5NVM79G36"
-      target="_blank"
-      rel="noopener">
-
-      💌 Confirmer ma présence
-
-    </a>
-
-  </section>
-
-
-
-  <!-- ========================================
-       PIED DE PAGE
-       ======================================== -->
-
-  <footer>
-
-    <div class="fc">
-      C & F
-    </div>
-
-    <p>
-      Catherine & Freddy
-    </p>
-
-    <p>
-      17 • 07 • 2027
-    </p>
-
-
-    <!-- LE PETIT SECRET -->
-
-    <div class="secret-link">
-
-      <a href="secret.html">
-        👀 Ne surtout pas cliquer ici…
-      </a>
-
-    </div>
-
-  </footer>
-
-
-
-  <!-- ========================================
-       COMPTE À REBOURS
-       ======================================== -->
 
   <script>
 
-    const dateMariage =
-      new Date("2027-07-17T16:00:00");
+    /* =====================================
+       MAUVAISE RÉPONSE
+       ===================================== */
+
+    function mauvaiseReponse() {
+
+      const message =
+        document.getElementById("message");
 
 
-    function actualiserCompteARebours() {
-
-      const maintenant = new Date();
-
-      const difference =
-        dateMariage - maintenant;
+      const carte =
+        document.getElementById("carte");
 
 
-      if (difference <= 0) {
-
-        document.getElementById("jours").textContent = "0";
-        document.getElementById("heures").textContent = "0";
-        document.getElementById("minutes").textContent = "0";
-        document.getElementById("secondes").textContent = "0";
-
-        return;
-      }
+      message.innerHTML =
+        "Sérieusement ?! 😂<br>Essaie encore…";
 
 
-      const jours =
-        Math.floor(
-          difference / (1000 * 60 * 60 * 24)
-        );
+      message.className =
+        "erreur";
 
 
-      const heures =
-        Math.floor(
-          (difference / (1000 * 60 * 60)) % 24
-        );
+      carte.classList.remove(
+        "tremble"
+      );
 
 
-      const minutes =
-        Math.floor(
-          (difference / (1000 * 60)) % 60
-        );
+      void carte.offsetWidth;
 
 
-      const secondes =
-        Math.floor(
-          (difference / 1000) % 60
-        );
+      carte.classList.add(
+        "tremble"
+      );
 
-
-      document.getElementById("jours").textContent =
-        jours;
-
-      document.getElementById("heures").textContent =
-        heures;
-
-      document.getElementById("minutes").textContent =
-        minutes;
-
-      document.getElementById("secondes").textContent =
-        secondes;
     }
 
 
-    actualiserCompteARebours();
 
-    setInterval(
-      actualiserCompteARebours,
-      1000
-    );
+    /* =====================================
+       BONNE RÉPONSE
+       ===================================== */
+
+    function bonneReponse() {
+
+      /*
+        On vérifie si ce téléphone
+        possède déjà un ticket.
+      */
+
+      let numero =
+        localStorage.getItem(
+          "numeroLoterieMariage"
+        );
+
+
+      /*
+        Sinon :
+        attribution aléatoire
+        entre 001 et 045.
+      */
+
+      if (!numero) {
+
+        const tirage =
+          Math.floor(
+            Math.random() * 45
+          ) + 1;
+
+
+        numero =
+          String(tirage).padStart(
+            3,
+            "0"
+          );
+
+
+        /*
+          On mémorise le ticket
+          sur cet appareil.
+        */
+
+        localStorage.setItem(
+          "numeroLoterieMariage",
+          numero
+        );
+
+      }
+
+
+      /*
+        On cache le quiz.
+      */
+
+      document.getElementById(
+        "quiz"
+      ).style.display =
+        "none";
+
+
+      /*
+        On lance l'animation.
+      */
+
+      lancerAnimation(
+        numero
+      );
+
+    }
+
+
+
+    /* =====================================
+       ANIMATION DES NUMÉROS
+       ===================================== */
+
+    function lancerAnimation(
+      numeroFinal
+    ) {
+
+      const zoneTirage =
+        document.getElementById(
+          "tirage"
+        );
+
+
+      const numeroAnimation =
+        document.getElementById(
+          "numeroAnimation"
+        );
+
+
+      zoneTirage.style.display =
+        "block";
+
+
+      let compteur = 0;
+
+
+      const animation =
+        setInterval(
+          function() {
+
+            /*
+              Affiche rapidement
+              différents nombres.
+            */
+
+            const fauxNumero =
+              Math.floor(
+                Math.random() * 45
+              ) + 1;
+
+
+            numeroAnimation.textContent =
+              String(
+                fauxNumero
+              ).padStart(
+                3,
+                "0"
+              );
+
+
+            compteur++;
+
+
+            /*
+              Environ 2 secondes
+              d'animation.
+            */
+
+            if (compteur >= 20) {
+
+              clearInterval(
+                animation
+              );
+
+
+              numeroAnimation.textContent =
+                numeroFinal;
+
+
+              setTimeout(
+                function() {
+
+                  afficherTicket(
+                    numeroFinal
+                  );
+
+                },
+                700
+              );
+
+            }
+
+          },
+          90
+        );
+
+    }
+
+
+
+    /* =====================================
+       AFFICHAGE DU TICKET
+       ===================================== */
+
+    function afficherTicket(
+      numero
+    ) {
+
+      document.getElementById(
+        "tirage"
+      ).style.display =
+        "none";
+
+
+      document.getElementById(
+        "numero"
+      ).textContent =
+        numero;
+
+
+      document.getElementById(
+        "ticket"
+      ).style.display =
+        "block";
+
+
+      /*
+        Quelques confettis
+        au moment de l'apparition.
+      */
+
+      lancerConfettis();
+
+    }
+
+
+
+    /* =====================================
+       CONFETTIS
+       ===================================== */
+
+    function lancerConfettis() {
+
+      const symboles = [
+        "🌿",
+        "✨",
+        "🤍",
+        "🍀",
+        "🎉"
+      ];
+
+
+      for (
+        let i = 0;
+        i < 18;
+        i++
+      ) {
+
+        const confetti =
+          document.createElement(
+            "div"
+          );
+
+
+        confetti.className =
+          "confetti";
+
+
+        confetti.textContent =
+          symboles[
+            Math.floor(
+              Math.random()
+              * symboles.length
+            )
+          ];
+
+
+        confetti.style.left =
+          Math.random() * 100
+          + "vw";
+
+
+        confetti.style.animationDuration =
+          (
+            2.5
+            + Math.random() * 2
+          )
+          + "s";
+
+
+        confetti.style.animationDelay =
+          (
+            Math.random() * .6
+          )
+          + "s";
+
+
+        document.body.appendChild(
+          confetti
+        );
+
+
+        setTimeout(
+          function() {
+
+            confetti.remove();
+
+          },
+          5000
+        );
+
+      }
+
+    }
+
+
+
+    /* =====================================
+       RAPPEL CAPTURE
+       ===================================== */
+
+    function rappelCapture() {
+
+      const message =
+        document.getElementById(
+          "captureMessage"
+        );
+
+
+      message.style.display =
+        "block";
+
+
+      /*
+        Sur certains téléphones,
+        on ne peut pas déclencher
+        directement une capture
+        depuis une page web.
+
+        On rappelle donc simplement
+        à l'invité de la faire.
+      */
+
+    }
 
   </script>
 
