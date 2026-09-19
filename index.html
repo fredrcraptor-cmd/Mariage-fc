@@ -387,6 +387,99 @@
 
 
     /* ========================================
+       MUSIQUE
+       ======================================== */
+
+    .musique-demarrage {
+      position: fixed;
+
+      left: 50%;
+      bottom: 25px;
+
+      transform: translateX(-50%);
+
+      z-index: 9999;
+
+      padding: 13px 22px;
+
+      border: none;
+      border-radius: 30px;
+
+      background: #71806c;
+      color: white;
+
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+
+      box-shadow:
+        0 5px 20px rgba(0,0,0,.20);
+
+      cursor: pointer;
+
+      display: none;
+
+      animation:
+        apparitionMusique .5s ease;
+    }
+
+    .musique-demarrage:hover {
+      background: #596653;
+    }
+
+
+    .musique-controle {
+      position: fixed;
+
+      right: 20px;
+      bottom: 20px;
+
+      z-index: 9999;
+
+      width: 52px;
+      height: 52px;
+
+      padding: 0;
+
+      border: none;
+      border-radius: 50%;
+
+      background: #71806c;
+      color: white;
+
+      font-size: 21px;
+
+      box-shadow:
+        0 5px 20px rgba(0,0,0,.20);
+
+      cursor: pointer;
+
+      display: none;
+
+      transition: .2s;
+    }
+
+    .musique-controle:hover {
+      background: #596653;
+      transform: scale(1.08);
+    }
+
+
+    @keyframes apparitionMusique {
+
+      from {
+        opacity: 0;
+        transform: translate(-50%, 15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+
+    }
+
+
+    /* ========================================
        TABLETTE
        ======================================== */
 
@@ -553,6 +646,28 @@
         font-size: 13px;
         padding: 9px 16px;
       }
+
+
+      /* MUSIQUE MOBILE */
+
+      .musique-demarrage {
+        bottom: 18px;
+
+        font-size: 13px;
+
+        white-space: nowrap;
+      }
+
+      .musique-controle {
+        width: 48px;
+        height: 48px;
+
+        right: 15px;
+        bottom: 15px;
+
+        font-size: 19px;
+      }
+
     }
 
   </style>
@@ -561,6 +676,39 @@
 
 
 <body>
+
+
+  <!-- ========================================
+       MUSIQUE
+       ======================================== -->
+
+  <audio
+    id="musiqueFond"
+    src="musique.mp3"
+    loop
+    preload="auto">
+  </audio>
+
+
+  <button
+    id="boutonDemarrageMusique"
+    class="musique-demarrage"
+    type="button"
+    onclick="activerMusique()">
+    🎵 Activer la musique
+  </button>
+
+
+  <button
+    id="boutonMusique"
+    class="musique-controle"
+    type="button"
+    onclick="toggleMusique()"
+    aria-label="Activer ou couper la musique"
+    title="Musique">
+    🔊
+  </button>
+
 
 
   <!-- ========================================
@@ -1024,6 +1172,201 @@
     );
 
   </script>
+
+
+
+  <!-- ========================================
+       GESTION DE LA MUSIQUE
+       ======================================== -->
+
+  <script>
+
+    const musique =
+      document.getElementById("musiqueFond");
+
+    const boutonMusique =
+      document.getElementById("boutonMusique");
+
+    const boutonDemarrage =
+      document.getElementById("boutonDemarrageMusique");
+
+    let fonduInterval;
+
+
+    /* ========================================
+       FONDU PROGRESSIF
+       ======================================== */
+
+    function fonduMusique() {
+
+      clearInterval(fonduInterval);
+
+      musique.volume = 0;
+
+      const volumeFinal = 0.35;
+
+
+      fonduInterval =
+        setInterval(function() {
+
+          if (
+            musique.volume
+            < volumeFinal - 0.02
+          ) {
+
+            musique.volume =
+              Math.min(
+                musique.volume + 0.02,
+                volumeFinal
+              );
+
+          } else {
+
+            musique.volume =
+              volumeFinal;
+
+            clearInterval(
+              fonduInterval
+            );
+
+          }
+
+        }, 120);
+
+    }
+
+
+    /* ========================================
+       DÉMARRER LA MUSIQUE
+       ======================================== */
+
+    async function demarrerMusique() {
+
+      try {
+
+        musique.volume = 0;
+
+        await musique.play();
+
+        boutonDemarrage.style.display =
+          "none";
+
+        boutonMusique.style.display =
+          "block";
+
+        boutonMusique.textContent =
+          "🔊";
+
+        fonduMusique();
+
+        return true;
+
+      }
+
+      catch (erreur) {
+
+        return false;
+
+      }
+
+    }
+
+
+    /* ========================================
+       BOUTON ACTIVER
+       ======================================== */
+
+    async function activerMusique() {
+
+      const resultat =
+        await demarrerMusique();
+
+      if (!resultat) {
+
+        boutonDemarrage.textContent =
+          "🎵 Touchez pour lancer la musique";
+
+      }
+
+    }
+
+
+    /* ========================================
+       BOUTON 🔊 / 🔇
+       ======================================== */
+
+    async function toggleMusique() {
+
+      if (musique.paused) {
+
+        try {
+
+          musique.volume = 0;
+
+          await musique.play();
+
+          boutonMusique.textContent =
+            "🔊";
+
+          fonduMusique();
+
+        }
+
+        catch (erreur) {
+
+          boutonDemarrage.style.display =
+            "block";
+
+          boutonMusique.style.display =
+            "none";
+
+        }
+
+      }
+
+      else {
+
+        clearInterval(
+          fonduInterval
+        );
+
+        musique.pause();
+
+        boutonMusique.textContent =
+          "🔇";
+
+      }
+
+    }
+
+
+    /* ========================================
+       TENTATIVE AUTOPLAY
+       ======================================== */
+
+    window.addEventListener(
+      "load",
+      async function() {
+
+        const lectureOK =
+          await demarrerMusique();
+
+
+        if (!lectureOK) {
+
+          boutonDemarrage.style.display =
+            "block";
+
+          boutonMusique.style.display =
+            "none";
+
+        }
+
+      }
+    );
+
+  </script>
+
 
 </body>
 
