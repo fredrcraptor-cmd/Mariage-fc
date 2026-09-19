@@ -147,7 +147,6 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-
       gap: 15px;
       margin-top: 35px;
     }
@@ -393,10 +392,8 @@
     .musique-demarrage {
       position: fixed;
 
-      left: 50%;
-      bottom: 25px;
-
-      transform: translateX(-50%);
+      right: 20px;
+      bottom: 20px;
 
       z-index: 9999;
 
@@ -468,12 +465,12 @@
 
       from {
         opacity: 0;
-        transform: translate(-50%, 15px);
+        transform: translateY(15px);
       }
 
       to {
         opacity: 1;
-        transform: translate(-50%, 0);
+        transform: translateY(0);
       }
 
     }
@@ -651,7 +648,8 @@
       /* MUSIQUE MOBILE */
 
       .musique-demarrage {
-        bottom: 18px;
+        right: 15px;
+        bottom: 15px;
 
         font-size: 13px;
 
@@ -1176,7 +1174,7 @@
 
 
   <!-- ========================================
-       GESTION DE LA MUSIQUE
+       MUSIQUE
        ======================================== -->
 
   <script>
@@ -1193,9 +1191,7 @@
     let fonduInterval;
 
 
-    /* ========================================
-       FONDU PROGRESSIF
-       ======================================== */
+    /* FONDU PROGRESSIF */
 
     function fonduMusique() {
 
@@ -1236,9 +1232,7 @@
     }
 
 
-    /* ========================================
-       DÉMARRER LA MUSIQUE
-       ======================================== */
+    /* DÉMARRER */
 
     async function demarrerMusique() {
 
@@ -1272,9 +1266,7 @@
     }
 
 
-    /* ========================================
-       BOUTON ACTIVER
-       ======================================== */
+    /* BOUTON ACTIVER */
 
     async function activerMusique() {
 
@@ -1291,9 +1283,7 @@
     }
 
 
-    /* ========================================
-       BOUTON 🔊 / 🔇
-       ======================================== */
+    /* BOUTON 🔊 / 🔇 */
 
     async function toggleMusique() {
 
@@ -1340,9 +1330,7 @@
     }
 
 
-    /* ========================================
-       TENTATIVE AUTOPLAY
-       ======================================== */
+    /* TENTATIVE AUTOPLAY */
 
     window.addEventListener(
       "load",
